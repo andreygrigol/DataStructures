@@ -22,6 +22,21 @@ class ArrayNotOrditaned:
             self.last_position += 1
             self.values[self.last_position] = value
 
+    def search(self, value):
+        for i in range(self.last_position + 1):
+            if value == self.values[i]:
+                return i
+        return -1
+
+    def exclude(self, value):
+        position = self.search(value)
+        if position == -1:
+            return -1
+        else:
+            for i in range(position, self.last_position):
+                self.values[i] = self.values[i + 1]
+            self.last_position -= 1
+
 
 array = ArrayNotOrditaned(5)
 array.printed()
