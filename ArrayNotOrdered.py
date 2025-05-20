@@ -39,4 +39,18 @@ class ArrayNotOrditaned:
 
 
 array = ArrayNotOrditaned(5)
+
+array.insert(3)
+array.insert(2)
+array.insert(4)
+array.insert(5)
+array.insert(6)
+array.insert(1)
+
 array.printed()
+
+array.search(5)
+
+array.search(9)
+
+array.exclude(5)
