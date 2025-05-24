@@ -25,6 +25,8 @@ class OrderedArray:
             position = i
             if self.values[i] > value:
                 break
+            if i == self.last_position:
+                position = i + 1
 
         x = self.last_position
         while x >= position:
@@ -33,6 +35,13 @@ class OrderedArray:
 
         self.values[position] = value
         self.last_position += 1
+
+    def search(self, value):
+        for i in range(self.last_position + 1):
+            if self.values[i] > value:
+                return -1
+            if self.values[i] == value:
+                return i
 
 
 array = OrderedArray(10)
