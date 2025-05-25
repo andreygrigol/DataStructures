@@ -42,6 +42,17 @@ class OrderedArray:
                 return -1
             if self.values[i] == value:
                 return i
+            if i == self.last_position:
+                return -1
+
+    def exclude(self, value):
+        position = self.search(value)
+        if position == -1:
+            return -1
+        else:
+            for i in range(position, self.last_position):
+                self.values[1] = self.values[i + 1]
+            self.last_position -= 1
 
 
 array = OrderedArray(10)
@@ -49,3 +60,5 @@ array.printed()
 
 array.insert(6)
 array.printed()
+
+array.search(9)
